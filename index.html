@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atomic Bomb by JLV — Site éducatif et scientifique sur l'histoire, la science et les effets de la bombe atomique. Simulation 3D immersive, data visualisation et analyse géopolitique.">
+    <meta name="keywords" content="bombe atomique, nucléaire, histoire, science, simulation 3D, physique nucléaire, Hiroshima, Nagasaki, Manhattan Project">
+    <meta name="author" content="JLV">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Atomic Bomb by JLV">
+    <meta property="og:description" content="Histoire, science, stratégie et simulation visuelle du phénomène nucléaire">
+    <meta property="og:type" content="website">
+    <title>Atomic Bomb by JLV</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☢</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ======================== NAVIGATION ======================== -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-icon">☢</span>
+                <span class="brand-text">ATOMIC BOMB</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#histoire">Histoire</a></li>
+                <li><a href="#science">Science</a></li>
+                <li><a href="#geopolitique">Géopolitique</a></li>
+                <li><a href="#effets">Effets</a></li>
+                <li><a href="#simulation">Simulation 3D</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#data">Données</a></li>
+                <li><a href="#glossaire">Glossaire</a></li>
+            </ul>
+            <div class="nav-logo">
+                <img src="logo_JLV.jpg" alt="Logo JLV" class="jlv-logo">
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================== HERO HEADER ======================== -->
+    <header id="hero" class="hero-section">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">PROJET ÉDUCATIF & SCIENTIFIQUE</div>
+            <h1 class="hero-title">
+                <span class="title-line">ATOMIC</span>
+                <span class="title-line title-accent">BOMB</span>
+                <span class="title-byline">by <strong>JLV</strong></span>
+            </h1>
+            <p class="hero-subtitle">Histoire, science, stratégie et simulation visuelle du phénomène nucléaire</p>
+            <div class="hero-cta">
+                <a href="#histoire" class="btn btn-primary">Explorer l'histoire</a>
+                <a href="#simulation" class="btn btn-secondary">Voir la simulation</a>
+                <a href="#effets" class="btn btn-outline">Comprendre les effets</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="2056">0</span>
+                    <span class="stat-label">Essais nucléaires (1945-2017)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="9">0</span>
+                    <span class="stat-label">États dotés de l'arme</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="12121">0</span>
+                    <span class="stat-label">Ogives estimées (2024)</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Défiler</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <!-- ======================== SECTION HISTORIQUE ======================== -->
+    <section id="histoire" class="section section-histoire">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">01 — CHRONOLOGIE</span>
+                <h2 class="section-title">Histoire du nucléaire</h2>
+                <p class="section-intro">De la découverte de la radioactivité aux enjeux contemporains, retour sur les étapes fondatrices de l'ère atomique.</p>
+            </div>
+
+            <!-- Frise chronologique interactive -->
+            <div class="timeline" data-animate>
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item" data-year="1896">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1896</span>
+                        <h3>Découverte de la radioactivité</h3>
+                        <p>Henri Becquerel découvre la radioactivité naturelle en étudiant les sels d'uranium. Cette observation fortuite ouvre un champ de recherche fondamental qui transformera la physique du XXe siècle.</p>
+                        <div class="timeline-quote">"J'ai constaté que les sels d'uranium émettent des radiations capables de traverser les corps opaques." — Henri Becquerel</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1898">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1898</span>
+                        <h3>Pierre et Marie Curie</h3>
+                        <p>Les époux Curie isolent le polonium et le radium, et inventent le terme "radioactivité". Marie Curie devient la première femme à recevoir un prix Nobel. Leurs travaux démontrent que la radioactivité est une propriété atomique intrinsèque, non un phénomène chimique.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1905">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1905</span>
+                        <h3>E = mc²</h3>
+                        <p>Albert Einstein publie la théorie de la relativité restreinte et l'équation E = mc², établissant l'équivalence masse-énergie. Cette formule devient le socle théorique de l'énergie nucléaire : une quantité infime de matière peut libérer une énergie colossale.</p>
+                        <div class="timeline-quote">"L'énergie d'un corps est égale à sa masse multipliée par le carré de la vitesse de la lumière." — Albert Einstein</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1932">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1932</span>
+                        <h3>Découverte du neutron</h3>
+                        <p>James Chadwick identifie le neutron, particule neutre du noyau atomique. Cette découverte est décisive : le neutron, n'étant pas repoussé par la charge électrique du noyau, peut y pénétrer facilement et provoquer des réactions nucléaires.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1938">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1938</span>
+                        <h3>Fission nucléaire</h3>
+                        <p>Otto Hahn et Fritz Strassmann réalisent la première fission de l'uranium à Berlin. Lise Meitner et Otto Frisch en fournissent l'interprétation théorique : le noyau d'uranium se scinde en deux fragments plus légers, libérant une énergie considérable et des neutrons supplémentaires capables de provoquer une réaction en chaîne.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1939">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1939</span>
+                        <h3>Lettre Einstein-Szilard</h3>
+                        <p>Albert Einstein signe la célèbre lettre adressée au président Roosevelt, avertissant de la possibilité de construire des bombes d'une puissance inédite à partir de la fission de l'uranium, et du risque que l'Allemagne nazie y parvienne en premier. Cette lettre déclenche le programme de recherche américain.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1942">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1942</span>
+                        <h3>Projet Manhattan</h3>
+                        <p>Le projet Manhattan est officiellement lancé sous la direction du général Leslie Groves et du physicien J. Robert Oppenheimer. C'est le plus vaste programme scientifique et militaire de l'histoire : plus de 125 000 personnes, trois sites principaux (Oak Ridge, Hanford, Los Alamos) et un budget colossal de 2 milliards de dollars de l'époque.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item highlight" data-year="1945-07">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">16 juillet 1945</span>
+                        <h3>Essai Trinity</h3>
+                        <p>Premier essai nucléaire de l'histoire dans le désert du Nouveau-Mexique (Jornada del Muerto). L'explosion dégage une puissance de 21 kilotonnes de TNT. Le sable du désert est vitrifié en une substance verte appelée "trinitite". L'humanité entre dans l'ère atomique.</p>
+                        <div class="timeline-quote">"Je suis devenu la Mort, le destructeur des mondes." — J. Robert Oppenheimer, citant la Bhagavad-Gita</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item highlight" data-year="1945-08a">
+                    <div class="timeline-marker marker-alert"></div>
+                    <div class="timeline-content glass-panel panel-alert">
+                        <span class="timeline-date">6 août 1945</span>
+                        <h3>Hiroshima</h3>
+                        <p>La bombe "Little Boy" (uranium-235, ~15 kt) est larguée sur Hiroshima par le B-29 Enola Gay. L'explosion rase instantanément 13 km² de la ville. Environ 80 000 personnes meurent sur le coup, et le bilan total atteindra 140 000 morts à la fin de l'année 1945 en comptant les effets des radiations.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item highlight" data-year="1945-08b">
+                    <div class="timeline-marker marker-alert"></div>
+                    <div class="timeline-content glass-panel panel-alert">
+                        <span class="timeline-date">9 août 1945</span>
+                        <h3>Nagasaki</h3>
+                        <p>La bombe "Fat Man" (plutonium-239, ~21 kt) est larguée sur Nagasaki. Malgré une puissance supérieure, le relief vallonné de la ville limite partiellement les destructions. Environ 40 000 personnes meurent immédiatement, et le bilan atteindra 70 000 morts fin 1945. Le Japon capitule le 15 août.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1949">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">29 août 1949</span>
+                        <h3>Premier essai soviétique</h3>
+                        <p>L'URSS fait exploser sa première bombe atomique ("RDS-1", surnommée "Joe-1" par les Américains) au Kazakhstan. Le monopole nucléaire américain est brisé. La course aux armements entre les deux superpuissances commence, inaugurant l'ère de la dissuasion nucléaire bipolaire.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1952">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1952</span>
+                        <h3>Première bombe H américaine</h3>
+                        <p>Les États-Unis testent "Ivy Mike", la première bombe thermonucléaire (à fusion) sur l'atoll d'Enewetak. Puissance : 10,4 mégatonnes, soit 700 fois Hiroshima. L'île d'Elugelab est entièrement vaporisée. La course à la puissance franchit un nouveau seuil.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1961">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">30 octobre 1961</span>
+                        <h3>Tsar Bomba</h3>
+                        <p>L'URSS fait exploser la "Tsar Bomba" au-dessus de Novaya Zemlya : 50 mégatonnes, la plus puissante explosion artificielle de l'histoire. La boule de feu atteint 8 km de diamètre, le champignon s'élève à 67 km d'altitude, et l'onde de choc fait trois fois le tour de la Terre. L'appareil avait été conçu pour 100 Mt mais bridé de moitié.</p>
+                        <div class="timeline-quote">L'onde de choc a été détectée après trois rotations autour du globe terrestre.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1962">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">Octobre 1962</span>
+                        <h3>Crise de Cuba</h3>
+                        <p>Le monde passe au plus près de l'apocalypse nucléaire pendant 13 jours. L'URSS installe des missiles à Cuba ; les États-Unis imposent un blocus naval. Le conflit se résout par la diplomatie, mais révèle la fragilité de l'équilibre de la terreur. Cet épisode accélère les négociations sur le contrôle des armements.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1968">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1968</span>
+                        <h3>Traité de Non-Prolifération (TNP)</h3>
+                        <p>Signature du TNP, pierre angulaire du régime international de non-prolifération. Le traité reconnaît cinq puissances nucléaires légitimes (États-Unis, URSS, Royaume-Uni, France, Chine) et engage les autres États à renoncer à l'arme en échange d'un accès au nucléaire civil. Entré en vigueur en 1970, il reste le cadre juridique fondamental malgré ses limites.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1991">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1991</span>
+                        <h3>Fin de la Guerre froide</h3>
+                        <p>La dissolution de l'URSS met fin à la bipolarité nucléaire. Les traités START I (1991) puis START II (1993) réduisent drastiquement les arsenaux. L'Ukraine, la Biélorussie et le Kazakhstan renoncent aux armes nucléaires héritées. Une nouvelle ère de désarmement s'ouvre, mais les défis de prolifération persistent.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="1996">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">1996</span>
+                        <h3>TICE — Traité d'interdiction des essais</h3>
+                        <p>Le Traité d'Interdiction Complète des Essais nucléaires (TICE/CTBT) est ouvert à la signature. Il interdit toute explosion nucléaire, civile ou militaire. Bien que signé par 187 États, il n'est toujours pas entré en vigueur faute de ratification par certains pays clés (États-Unis, Chine, Inde, Pakistan, Israël, Iran, Égypte, Corée du Nord).</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2017">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-date">2006-2017</span>
+                        <h3>Programme nord-coréen</h3>
+                        <p>La Corée du Nord réalise six essais nucléaires entre 2006 et 2017, le dernier atteignant une puissance estimée à 250 kt. Pyongyang développe parallèlement des missiles balistiques intercontinentaux (ICBM), ajoutant une nouvelle dimension à la prolifération nucléaire mondiale et aux tensions en Asie du Nord-Est.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SECTION SCIENCE ======================== -->
+    <section id="science" class="section section-science">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">02 — PHYSIQUE NUCLÉAIRE</span>
+                <h2 class="section-title">Recherche scientifique</h2>
+                <p class="section-intro">Comprendre les principes fondamentaux de la physique nucléaire : fission, fusion, énergie libérée et phénomènes associés.</p>
+            </div>
+
+            <div class="science-grid" data-animate>
+                <!-- Fission -->
+                <div class="science-card glass-panel">
+                    <div class="card-icon">⚛</div>
+                    <h3>Fission nucléaire</h3>
+                    <p>La fission est la rupture d'un noyau lourd (uranium-235 ou plutonium-239) en deux noyaux plus légers, provoquée par l'absorption d'un neutron. Ce processus libère environ <strong>200 MeV par fission</strong>, ainsi que 2 à 3 neutrons supplémentaires capables de déclencher d'autres fissions.</p>
+                    <div class="info-box">
+                        <strong>À retenir :</strong> La réaction en chaîne se produit lorsque chaque fission engendre au moins une nouvelle fission. La masse minimale nécessaire pour soutenir cette réaction est appelée <em>masse critique</em>.
+                    </div>
+                    <div class="schema-placeholder" data-diagram="fission">
+                        <div class="diagram-fission">
+                            <div class="nucleus nucleus-parent">
+                                <span>U-235</span>
+                            </div>
+                            <div class="neutron-incoming">n</div>
+                            <div class="fission-arrow">→</div>
+                            <div class="fission-products">
+                                <div class="nucleus nucleus-child">Ba-141</div>
+                                <div class="nucleus nucleus-child">Kr-92</div>
+                                <div class="neutrons-out">
+                                    <span>n</span><span>n</span><span>n</span>
+                                </div>
+                                <div class="energy-label">+ ~200 MeV</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fusion -->
+                <div class="science-card glass-panel">
+                    <div class="card-icon">☀</div>
+                    <h3>Fusion thermonucléaire</h3>
+                    <p>La fusion est le processus inverse : deux noyaux légers (isotopes de l'hydrogène — deutérium et tritium) fusionnent pour former un noyau plus lourd (hélium), en libérant une énergie considérable. C'est le mécanisme qui alimente le Soleil et les étoiles.</p>
+                    <div class="info-box">
+                        <strong>À retenir :</strong> La fusion nécessite des températures de l'ordre de <strong>100 millions de degrés</strong>. Dans les armes thermonucléaires (bombes H), c'est une réaction de fission qui fournit les conditions initiales de température et de pression nécessaires à la fusion.
+                    </div>
+                    <div class="schema-placeholder" data-diagram="fusion">
+                        <div class="diagram-fusion">
+                            <div class="nucleus fusion-d">D</div>
+                            <div class="fusion-plus">+</div>
+                            <div class="nucleus fusion-t">T</div>
+                            <div class="fission-arrow">→</div>
+                            <div class="fission-products">
+                                <div class="nucleus nucleus-he">He-4</div>
+                                <div class="neutrons-out"><span>n</span></div>
+                                <div class="energy-label">+ 17,6 MeV</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Énergie libérée -->
+                <div class="science-card glass-panel">
+                    <div class="card-icon">⚡</div>
+                    <h3>Énergie libérée</h3>
+                    <p>L'énergie d'une explosion nucléaire se répartit selon une distribution caractéristique, très différente d'une explosion conventionnelle :</p>
+                    <div class="energy-distribution">
+                        <div class="energy-bar">
+                            <div class="bar-fill" style="--width: 50%; --color: var(--accent-orange)">
+                                <span class="bar-label">Onde de choc — 50%</span>
+                            </div>
+                        </div>
+                        <div class="energy-bar">
+                            <div class="bar-fill" style="--width: 35%; --color: var(--accent-red)">
+                                <span class="bar-label">Rayonnement thermique — 35%</span>
+                            </div>
+                        </div>
+                        <div class="energy-bar">
+                            <div class="bar-fill" style="--width: 5%; --color: var(--accent-cyan)">
+                                <span class="bar-label">Radiations initiales — 5%</span>
+                            </div>
+                        </div>
+                        <div class="energy-bar">
+                            <div class="bar-fill" style="--width: 10%; --color: var(--accent-blue)">
+                                <span class="bar-label">Retombées radioactives — 10%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rayonnements -->
+                <div class="science-card glass-panel">
+                    <div class="card-icon">☢</div>
+                    <h3>Rayonnements ionisants</h3>
+                    <p>Une explosion nucléaire émet plusieurs types de rayonnements, chacun ayant des propriétés de pénétration et des effets biologiques différents :</p>
+                    <div class="radiation-table">
+                        <div class="rad-row rad-header">
+                            <span>Type</span><span>Nature</span><span>Pénétration</span><span>Protection</span>
+                        </div>
+                        <div class="rad-row">
+                            <span class="rad-alpha">Alpha (α)</span><span>Noyaux d'hélium</span><span>Quelques cm d'air</span><span>Feuille de papier</span>
+                        </div>
+                        <div class="rad-row">
+                            <span class="rad-beta">Bêta (β)</span><span>Électrons</span><span>Quelques mètres</span><span>Feuille d'aluminium</span>
+                        </div>
+                        <div class="rad-row">
+                            <span class="rad-gamma">Gamma (γ)</span><span>Photons haute énergie</span><span>Centaines de mètres</span><span>Plomb / béton épais</span>
+                        </div>
+                        <div class="rad-row">
+                            <span class="rad-neutron">Neutrons</span><span>Particules neutres</span><span>Très pénétrants</span><span>Eau / matériaux hydrogénés</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Onde de choc -->
+                <div class="science-card glass-panel">
+                    <div class="card-icon">💨</div>
+                    <h3>Onde de choc</h3>
+                    <p>L'onde de choc (ou blast) est le principal vecteur de destruction. Lors de l'explosion, l'air environnant est comprimé et chauffé à des millions de degrés, créant une sphère de gaz en expansion supersonique.</p>
+                    <p>La surpression au front de l'onde décroît avec la distance selon une loi approximative en 1/r³. Une surpression de <strong>35 kPa (~5 psi)</strong> suffit à détruire la plupart des structures résidentielles en béton.</p>
+                    <div class="info-box">
+                        <strong>À retenir :</strong> La distance de destruction varie comme la racine cubique de la puissance. Doubler la puissance n'augmente le rayon de destruction que de 26%.
+                    </div>
+                </div>
+
+                <!-- Impulsion thermique -->
+                <div class="science-card glass-panel">
+                    <div class="card-icon">🔥</div>
+                    <h3>Impulsion thermique</h3>
+                    <p>La boule de feu émet un flux de rayonnement thermique (visible et infrarouge) pendant plusieurs secondes. Ce rayonnement peut provoquer des brûlures au troisième degré et déclencher des incendies à plusieurs kilomètres du point zéro.</p>
+                    <p>Pour une arme de 1 Mt, le rayonnement thermique peut provoquer des brûlures graves jusqu'à <strong>12 km</strong> et déclencher des feux jusqu'à <strong>20 km</strong> du point de détonation.</p>
+                </div>
+
+                <!-- Retombées radioactives -->
+                <div class="science-card glass-panel">
+                    <div class="card-icon">🌫</div>
+                    <h3>Retombées radioactives</h3>
+                    <p>Les retombées (fallout) sont constituées de particules radioactives projetées dans l'atmosphère : produits de fission, matériaux activés par les neutrons, et poussières aspirées par la boule de feu. Elles retombent progressivement sur de vastes zones, contaminant sols, eaux et chaîne alimentaire.</p>
+                    <div class="info-box">
+                        <strong>À retenir :</strong> L'intensité des retombées suit la "règle du 7-10" : pour chaque multiplication du temps par 7 après l'explosion, la radioactivité diminue d'un facteur 10. Après 49 heures, elle est divisée par 100.
+                    </div>
+                </div>
+
+                <!-- EMP -->
+                <div class="science-card glass-panel">
+                    <div class="card-icon">📡</div>
+                    <h3>Impulsion électromagnétique (EMP)</h3>
+                    <p>Une explosion nucléaire, en particulier à haute altitude, génère une impulsion électromagnétique puissante. Les rayons gamma interagissent avec l'atmosphère par effet Compton, produisant un courant de particules chargées qui génère un champ électromagnétique intense et transitoire.</p>
+                    <p>Un EMP à haute altitude (HEMP) peut affecter l'ensemble des systèmes électroniques sur une zone continentale, détruisant circuits intégrés, réseaux de communication et infrastructures électriques.</p>
+                </div>
+            </div>
+
+            <!-- Glossaire scientifique intégré -->
+            <div class="mini-glossary glass-panel" data-animate>
+                <h3>Termes clés</h3>
+                <div class="glossary-grid">
+                    <div class="glossary-term"><strong>Masse critique :</strong> Quantité minimale de matière fissile nécessaire pour maintenir une réaction en chaîne auto-entretenue.</div>
+                    <div class="glossary-term"><strong>Section efficace :</strong> Probabilité d'interaction entre un neutron et un noyau, mesurée en barns (1 barn = 10⁻²⁴ cm²).</div>
+                    <div class="glossary-term"><strong>Rendement :</strong> Énergie totale libérée par l'explosion, exprimée en équivalent TNT (kilotonnes ou mégatonnes).</div>
+                    <div class="glossary-term"><strong>Point zéro (ground zero) :</strong> Point au sol situé directement sous (ou à) l'épicentre de l'explosion.</div>
+                    <div class="glossary-term"><strong>Demi-vie :</strong> Temps nécessaire pour que la moitié des noyaux radioactifs d'un échantillon se désintègrent.</div>
+                    <div class="glossary-term"><strong>Criticité :</strong> État dans lequel une masse fissile maintient exactement une réaction en chaîne stable.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SECTION GÉOPOLITIQUE ======================== -->
+    <section id="geopolitique" class="section section-geopolitique">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">03 — STRATÉGIE MONDIALE</span>
+                <h2 class="section-title">Géopolitique nucléaire</h2>
+                <p class="section-intro">Dissuasion, prolifération, traités et enjeux contemporains de l'arme atomique dans les relations internationales.</p>
+            </div>
+
+            <!-- Carte des puissances nucléaires -->
+            <div class="nuclear-states" data-animate>
+                <h3 class="subsection-title">Les États dotés de l'arme nucléaire</h3>
+                <div class="states-grid">
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇺🇸</div>
+                        <h4>États-Unis</h4>
+                        <div class="state-stats">
+                            <span class="stat">~5 044 ogives</span>
+                            <span class="stat">Premier essai : 1945</span>
+                        </div>
+                        <p>Arsenal le plus diversifié : triade nucléaire complète (ICBM, SLBM, bombardiers). Programme de modernisation en cours sur 30 ans estimé à 1 500 milliards de dollars.</p>
+                    </div>
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇷🇺</div>
+                        <h4>Russie</h4>
+                        <div class="state-stats">
+                            <span class="stat">~5 580 ogives</span>
+                            <span class="stat">Premier essai : 1949</span>
+                        </div>
+                        <p>Plus grand arsenal mondial. Développement de nouveaux vecteurs hypersoniques (Avangard, Kinjal). Doctrine d'emploi élargie en 2020 incluant la réponse nucléaire à une agression conventionnelle menaçant l'existence de l'État.</p>
+                    </div>
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇬🇧</div>
+                        <h4>Royaume-Uni</h4>
+                        <div class="state-stats">
+                            <span class="stat">~225 ogives</span>
+                            <span class="stat">Premier essai : 1952</span>
+                        </div>
+                        <p>Dissuasion minimale basée sur les sous-marins Trident. Augmentation du plafond d'ogives de 180 à 260 annoncée en 2021, rompant avec la tendance au désarmement.</p>
+                    </div>
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇫🇷</div>
+                        <h4>France</h4>
+                        <div class="state-stats">
+                            <span class="stat">~290 ogives</span>
+                            <span class="stat">Premier essai : 1960</span>
+                        </div>
+                        <p>Dissuasion "strictement suffisante" fondée sur deux composantes : sous-marins lanceurs d'engins (SNLE) et force aérienne stratégique. Indépendance décisionnelle totale au sein de l'OTAN.</p>
+                    </div>
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇨🇳</div>
+                        <h4>Chine</h4>
+                        <div class="state-stats">
+                            <span class="stat">~500 ogives</span>
+                            <span class="stat">Premier essai : 1964</span>
+                        </div>
+                        <p>Expansion rapide de l'arsenal, estimée à 1 000 ogives d'ici 2030. Politique déclarée de "non-emploi en premier" (no first use). Construction de nouveaux silos ICBM détectée par imagerie satellite.</p>
+                    </div>
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇮🇳</div>
+                        <h4>Inde</h4>
+                        <div class="state-stats">
+                            <span class="stat">~172 ogives</span>
+                            <span class="stat">Premier essai : 1974</span>
+                        </div>
+                        <p>Triade nucléaire en développement. Politique de "non-emploi en premier" et de représailles massives. Rivalité nucléaire avec le Pakistan et tensions avec la Chine.</p>
+                    </div>
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇵🇰</div>
+                        <h4>Pakistan</h4>
+                        <div class="state-stats">
+                            <span class="stat">~170 ogives</span>
+                            <span class="stat">Premier essai : 1998</span>
+                        </div>
+                        <p>Arsenal en croissance rapide, le plus dynamique au monde. Développement d'armes nucléaires tactiques (Nasr). Pas de politique de non-emploi en premier, seuil d'emploi considéré comme bas.</p>
+                    </div>
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇮🇱</div>
+                        <h4>Israël</h4>
+                        <div class="state-stats">
+                            <span class="stat">~90 ogives (estimé)</span>
+                            <span class="stat">Capacité présumée : ~1966</span>
+                        </div>
+                        <p>Politique d'ambiguïté nucléaire délibérée : ni confirmation ni démenti de la possession de l'arme. Non signataire du TNP. Capacité attribuée au centre de recherche de Dimona.</p>
+                    </div>
+                    <div class="state-card glass-panel">
+                        <div class="state-flag">🇰🇵</div>
+                        <h4>Corée du Nord</h4>
+                        <div class="state-stats">
+                            <span class="stat">~50 ogives (estimé)</span>
+                            <span class="stat">Premier essai : 2006</span>
+                        </div>
+                        <p>Six essais réalisés (2006-2017). Développement de missiles balistiques intercontinentaux (Hwasong-15/17). Retrait du TNP en 2003. Capacité thermonucléaire revendiquée depuis 2017.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctrine stratégique -->
+            <div class="doctrine-section" data-animate>
+                <h3 class="subsection-title">Doctrines et concepts stratégiques</h3>
+                <div class="doctrine-grid">
+                    <div class="doctrine-card glass-panel">
+                        <h4>Destruction mutuelle assurée (MAD)</h4>
+                        <p>Concept central de la Guerre froide : chaque camp possède la capacité de détruire l'autre même après avoir subi une première frappe. L'annihilation réciproque garantie rend toute attaque nucléaire irrationnelle, assurant un équilibre paradoxal par la terreur.</p>
+                    </div>
+                    <div class="doctrine-card glass-panel">
+                        <h4>Frappe en premier / Seconde frappe</h4>
+                        <p>La capacité de seconde frappe (survivre à une attaque et riposter) est la clé de la dissuasion. Les sous-marins nucléaires lanceurs d'engins (SNLE) sont considérés comme la composante la plus survivable, quasi invulnérables en plongée.</p>
+                    </div>
+                    <div class="doctrine-card glass-panel">
+                        <h4>Dissuasion minimale</h4>
+                        <p>Doctrine adoptée par la France, le Royaume-Uni et la Chine : un arsenal limité mais suffisant pour infliger des dommages inacceptables à tout agresseur. Contraste avec les arsenaux massifs russo-américains hérités de la Guerre froide.</p>
+                    </div>
+                    <div class="doctrine-card glass-panel">
+                        <h4>Escalade / Désescalade</h4>
+                        <p>Concept russe controversé : l'emploi limité d'une arme nucléaire tactique sur le champ de bataille pourrait contraindre l'adversaire à accepter un cessez-le-feu, évitant ainsi un conflit total. Cette doctrine abaisse le seuil nucléaire et inquiète les stratèges occidentaux.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traités -->
+            <div class="treaties-section" data-animate>
+                <h3 class="subsection-title">Principaux traités de contrôle</h3>
+                <div class="treaties-list">
+                    <div class="treaty-item glass-panel">
+                        <span class="treaty-year">1963</span>
+                        <div class="treaty-info">
+                            <h4>PTBT — Traité d'interdiction partielle des essais</h4>
+                            <p>Interdit les essais nucléaires atmosphériques, sous-marins et dans l'espace. Les essais souterrains restent autorisés.</p>
+                        </div>
+                    </div>
+                    <div class="treaty-item glass-panel">
+                        <span class="treaty-year">1968</span>
+                        <div class="treaty-info">
+                            <h4>TNP — Traité de Non-Prolifération</h4>
+                            <p>Pilier du régime de non-prolifération. 191 États parties. Non signé par l'Inde, le Pakistan, Israël ; la Corée du Nord s'en est retirée.</p>
+                        </div>
+                    </div>
+                    <div class="treaty-item glass-panel">
+                        <span class="treaty-year">1972</span>
+                        <div class="treaty-info">
+                            <h4>ABM & SALT I</h4>
+                            <p>Limitation des systèmes anti-missiles balistiques et premiers plafonds sur les vecteurs nucléaires stratégiques entre les États-Unis et l'URSS.</p>
+                        </div>
+                    </div>
+                    <div class="treaty-item glass-panel">
+                        <span class="treaty-year">1987</span>
+                        <div class="treaty-info">
+                            <h4>Traité FNI (INF)</h4>
+                            <p>Élimination des missiles à portée intermédiaire (500-5 500 km) déployés en Europe. Suspendu en 2019 par les États-Unis invoquant des violations russes.</p>
+                        </div>
+                    </div>
+                    <div class="treaty-item glass-panel">
+                        <span class="treaty-year">2010</span>
+                        <div class="treaty-info">
+                            <h4>New START</h4>
+                            <p>Dernier traité bilatéral de réduction des armements stratégiques entre les États-Unis et la Russie. Limite à 1 550 ogives déployées par camp. Suspendu par la Russie en 2023, expiré en 2026.</p>
+                        </div>
+                    </div>
+                    <div class="treaty-item glass-panel">
+                        <span class="treaty-year">2017</span>
+                        <div class="treaty-info">
+                            <h4>TIAN — Traité sur l'interdiction des armes nucléaires</h4>
+                            <p>Premier traité interdisant catégoriquement les armes nucléaires. Adopté par l'ONU, entré en vigueur en 2021. Aucun État doté ne l'a signé. Force juridique et politique contestée mais symbolique forte.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SECTION EFFETS ======================== -->
+    <section id="effets" class="section section-effets">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">04 — PHÉNOMÉNOLOGIE</span>
+                <h2 class="section-title">Effets d'une explosion nucléaire</h2>
+                <p class="section-intro">Analyse pédagogique des phénomènes physiques et de leurs conséquences selon la distance au point de détonation.</p>
+            </div>
+
+            <!-- Séquence temporelle de l'explosion -->
+            <div class="explosion-sequence" data-animate>
+                <h3 class="subsection-title">Chronologie d'une explosion (arme de 1 Mt, altitude optimale)</h3>
+                <div class="sequence-timeline">
+                    <div class="seq-item glass-panel">
+                        <div class="seq-time">0 s</div>
+                        <div class="seq-icon" style="--glow-color: #fff">●</div>
+                        <h4>Flash initial</h4>
+                        <p>Émission d'un flash lumineux d'une intensité extrême, visible à des centaines de kilomètres. Température au cœur : plusieurs dizaines de millions de degrés. Peut provoquer une cécité temporaire ou permanente à grande distance.</p>
+                    </div>
+                    <div class="seq-item glass-panel">
+                        <div class="seq-time">0-10 s</div>
+                        <div class="seq-icon" style="--glow-color: var(--accent-orange)">●</div>
+                        <h4>Boule de feu</h4>
+                        <p>Sphère de gaz incandescent atteignant un diamètre de 2 km pour 1 Mt. Température de surface : ~7 000°C. La boule s'élève par convection, aspirant poussières et débris (stem). Tout ce qui se trouve à l'intérieur est vaporisé instantanément.</p>
+                    </div>
+                    <div class="seq-item glass-panel">
+                        <div class="seq-time">1-10 s</div>
+                        <div class="seq-icon" style="--glow-color: var(--accent-cyan)">●</div>
+                        <h4>Onde de choc</h4>
+                        <p>Front de surpression se propageant à vitesse supersonique (initialement ~1 000 km/h, décélérant progressivement). Destruction totale des structures dans un rayon de 5 km, dommages sévères jusqu'à 12 km. Suivi d'une phase de dépression (aspiration).</p>
+                    </div>
+                    <div class="seq-item glass-panel">
+                        <div class="seq-time">0-20 s</div>
+                        <div class="seq-icon" style="--glow-color: var(--accent-red)">●</div>
+                        <h4>Rayonnement thermique</h4>
+                        <p>Émission prolongée de lumière et d'infrarouge. Brûlures au 3e degré jusqu'à 12 km, feux spontanés jusqu'à 20 km. Les matériaux sombres absorbent davantage. Les ombres thermiques gravent les silhouettes dans les surfaces claires.</p>
+                    </div>
+                    <div class="seq-item glass-panel">
+                        <div class="seq-time">10 s - min.</div>
+                        <div class="seq-icon" style="--glow-color: #a855f7">●</div>
+                        <h4>Nuage en champignon</h4>
+                        <p>La colonne de gaz chaud s'élève jusqu'à 25-30 km d'altitude (stratosphère) pour 1 Mt, aspirant d'énormes quantités de débris. Le sommet s'étale horizontalement, formant la forme caractéristique du champignon atomique. Diamètre du chapeau : ~30 km.</p>
+                    </div>
+                    <div class="seq-item glass-panel">
+                        <div class="seq-time">min. - jours</div>
+                        <div class="seq-icon" style="--glow-color: #64748b">●</div>
+                        <h4>Retombées radioactives</h4>
+                        <p>Les particules contaminées retombent progressivement. Le panache se déplace avec les vents dominants, créant une zone de contamination en forme d'ellipse pouvant s'étendre sur des centaines de kilomètres. Décroissance selon la règle 7-10.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau des effets par distance -->
+            <div class="effects-distance" data-animate>
+                <h3 class="subsection-title">Effets en fonction de la distance (bombe de 1 Mt, explosion aérienne)</h3>
+                <div class="distance-table glass-panel">
+                    <div class="dt-header">
+                        <span>Distance</span>
+                        <span>Surpression</span>
+                        <span>Effets principaux</span>
+                    </div>
+                    <div class="dt-row dt-extreme">
+                        <span>0 - 2 km</span>
+                        <span>> 200 kPa</span>
+                        <span>Destruction totale. Cratère. Tout est vaporisé ou pulvérisé. Aucune survie possible.</span>
+                    </div>
+                    <div class="dt-row dt-severe">
+                        <span>2 - 5 km</span>
+                        <span>70 - 200 kPa</span>
+                        <span>Destruction complète des structures en béton armé. Incendies généralisés. Mortalité quasi-totale.</span>
+                    </div>
+                    <div class="dt-row dt-heavy">
+                        <span>5 - 10 km</span>
+                        <span>35 - 70 kPa</span>
+                        <span>Effondrement des bâtiments résidentiels. Brûlures sévères. Mortalité élevée sans abri.</span>
+                    </div>
+                    <div class="dt-row dt-moderate">
+                        <span>10 - 20 km</span>
+                        <span>10 - 35 kPa</span>
+                        <span>Bris de vitres, dommages structurels modérés. Brûlures au 2e-3e degré. Blessures par débris projetés.</span>
+                    </div>
+                    <div class="dt-row dt-light">
+                        <span>20 - 40 km</span>
+                        <span>3 - 10 kPa</span>
+                        <span>Bris de vitres généralisé. Brûlures au 1er degré possibles. Flash aveuglant. Dommages légers.</span>
+                    </div>
+                    <div class="dt-row dt-far">
+                        <span>> 40 km</span>
+                        <span>< 3 kPa</span>
+                        <span>Flash visible. Onde sonore perceptible. EMP. Retombées possibles sous le vent.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Effets sur l'environnement -->
+            <div class="env-effects" data-animate>
+                <h3 class="subsection-title">Conséquences environnementales</h3>
+                <div class="env-grid">
+                    <div class="env-card glass-panel">
+                        <h4>Hiver nucléaire</h4>
+                        <p>Un conflit nucléaire majeur projetterait des millions de tonnes de suie dans la stratosphère, bloquant le rayonnement solaire pendant des mois voire des années. Les températures mondiales pourraient chuter de 5 à 15°C, provoquant des famines généralisées.</p>
+                    </div>
+                    <div class="env-card glass-panel">
+                        <h4>Destruction de la couche d'ozone</h4>
+                        <p>Les oxydes d'azote produits par les explosions nucléaires catalysent la destruction de l'ozone stratosphérique. Une guerre nucléaire régionale pourrait réduire la couche d'ozone de 25 à 75%, augmentant dramatiquement le rayonnement UV.</p>
+                    </div>
+                    <div class="env-card glass-panel">
+                        <h4>Contamination à long terme</h4>
+                        <p>Certains isotopes radioactifs persistent pendant des décennies (césium-137, strontium-90 : ~30 ans de demi-vie) voire des milliers d'années (plutonium-239 : 24 100 ans). La contamination affecte sols, nappes phréatiques et chaîne alimentaire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SIMULATION 3D ======================== -->
+    <section id="simulation" class="section section-simulation">
+        <div class="container-fluid">
+            <div class="section-header" data-animate>
+                <span class="section-tag">05 — SIMULATION</span>
+                <h2 class="section-title">Simulation 3D immersive</h2>
+                <p class="section-intro">Visualisation pédagogique et stylisée d'une explosion nucléaire en temps réel. Purement illustratif et qualitatif.</p>
+            </div>
+
+            <div class="simulation-wrapper" id="simulationWrapper">
+                <!-- Panneau de contrôle -->
+                <div class="sim-controls glass-panel" id="simControls">
+                    <h3>Paramètres</h3>
+
+                    <div class="control-group">
+                        <label>Puissance relative</label>
+                        <input type="range" id="simPower" min="1" max="100" value="50" class="sim-slider">
+                        <span class="slider-value" id="simPowerVal">50 kt (éq.)</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Altitude de détonation</label>
+                        <select id="simAltitude" class="sim-select">
+                            <option value="surface">Surface</option>
+                            <option value="air" selected>Aérienne (~600m)</option>
+                            <option value="high">Haute altitude</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Vitesse d'animation</label>
+                        <input type="range" id="simSpeed" min="0.1" max="3" step="0.1" value="1" class="sim-slider">
+                        <span class="slider-value" id="simSpeedVal">1.0x</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Distance d'observation</label>
+                        <input type="range" id="simDistance" min="10" max="100" step="5" value="50" class="sim-slider">
+                        <span class="slider-value" id="simDistVal">50 km</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Couches visibles</label>
+                        <div class="toggle-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="layerFireball" checked>
+                                <span class="toggle-switch"></span>
+                                Boule de feu
+                            </label>
+                            <label class="toggle-label">
+                                <input type="checkbox" id="layerShockwave" checked>
+                                <span class="toggle-switch"></span>
+                                Onde de choc
+                            </label>
+                            <label class="toggle-label">
+                                <input type="checkbox" id="layerHeat" checked>
+                                <span class="toggle-switch"></span>
+                                Chaleur
+                            </label>
+                            <label class="toggle-label">
+                                <input type="checkbox" id="layerRadiation" checked>
+                                <span class="toggle-switch"></span>
+                                Rayonnement
+                            </label>
+                            <label class="toggle-label">
+                                <input type="checkbox" id="layerFallout" checked>
+                                <span class="toggle-switch"></span>
+                                Retombées
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Affichage</label>
+                        <div class="toggle-group">
+                            <label class="toggle-label">
+                                <input type="checkbox" id="toggleGrid" checked>
+                                <span class="toggle-switch"></span>
+                                Grille d'échelle
+                            </label>
+                            <label class="toggle-label">
+                                <input type="checkbox" id="toggleNight">
+                                <span class="toggle-switch"></span>
+                                Mode nuit
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="control-buttons">
+                        <button class="btn btn-sim" id="simStart">▶ Lancer</button>
+                        <button class="btn btn-sim" id="simPause" disabled>⏸ Pause</button>
+                        <button class="btn btn-sim" id="simReset">↺ Reset</button>
+                        <button class="btn btn-sim btn-fullscreen" id="simFullscreen">⛶ Plein écran</button>
+                    </div>
+
+                    <div class="sim-phase" id="simPhase">
+                        <span class="phase-label">Phase :</span>
+                        <span class="phase-value" id="simPhaseText">En attente</span>
+                    </div>
+                </div>
+
+                <!-- Zone de rendu 3D -->
+                <div class="sim-canvas-wrapper" id="simCanvasWrapper">
+                    <canvas id="simCanvas"></canvas>
+                    <div class="sim-overlay" id="simOverlay">
+                        <span>Cliquez sur "Lancer" pour démarrer la simulation</span>
+                    </div>
+                    <div class="sim-info-bar" id="simInfoBar">
+                        <span id="simTime">T + 0.0 s</span>
+                        <span id="simPowerDisplay">50 kt</span>
+                        <span id="simFPS">-- FPS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== GALERIE MÉDIA ======================== -->
+    <section id="galerie" class="section section-galerie">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">06 — ARCHIVES</span>
+                <h2 class="section-title">Galerie documentaire</h2>
+                <p class="section-intro">Images historiques, schémas scientifiques et documents d'archives du programme nucléaire mondial.</p>
+            </div>
+
+            <div class="gallery-grid" data-animate>
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/01_trinity_test.jpg" alt="Essai Trinity — 16 juillet 1945" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Essai Trinity</h4>
+                        <p>Première explosion nucléaire de l'histoire, 0,025 secondes après la détonation. Désert d'Alamogordo, Nouveau-Mexique. Puissance : 21 kt.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/02_crossroads_baker.jpg" alt="Essai Baker — Bikini, 1946" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Opération Crossroads — Essai Baker</h4>
+                        <p>Explosion sous-marine à l'atoll de Bikini. La colonne d'eau atteint 1 800 mètres de hauteur, soulevant des navires comme des jouets.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/03_hiroshima.jpg" alt="Hiroshima — 6 août 1945" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Hiroshima après le bombardement</h4>
+                        <p>Vue aérienne d'Hiroshima après l'explosion de "Little Boy". La quasi-totalité du centre-ville est rasée sur un rayon de 1,6 km.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/04_fission_chain.svg" alt="Schéma de fission nucléaire — Réaction en chaîne" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Réaction en chaîne</h4>
+                        <p>Schéma pédagogique de la réaction en chaîne par fission : chaque noyau fissionné libère des neutrons qui provoquent de nouvelles fissions.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/05_tsar_bomba.jpg" alt="Tsar Bomba — 1961" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Tsar Bomba</h4>
+                        <p>Champignon atomique de la Tsar Bomba (50 Mt), la plus puissante explosion artificielle. Le champignon s'est élevé à 67 km d'altitude.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/06_blast_curves.svg" alt="Zones d'effets concentriques — Infographie" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Zones d'effets concentriques</h4>
+                        <p>Infographie montrant les zones de destruction, de brûlures et de retombées radioactives pour une arme de 1 Mt explosant à altitude optimale.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/07_test_sites_map.svg" alt="Carte mondiale des sites d'essais nucléaires" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Carte mondiale des essais</h4>
+                        <p>Plus de 2 000 essais nucléaires réalisés entre 1945 et 2017 sur une trentaine de sites à travers le monde.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/08_einstein.jpg" alt="Albert Einstein — E = mc², 1905" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>L'équation fondatrice</h4>
+                        <p>L'équivalence masse-énergie d'Einstein : le fondement théorique de l'énergie nucléaire. Une quantité infime de matière peut libérer une énergie colossale.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/09_nagasaki.jpg" alt="Nagasaki — 9 août 1945, champignon atomique de Fat Man" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>Nagasaki — Fat Man</h4>
+                        <p>Le champignon atomique au-dessus de Nagasaki, 9 août 1945. "Fat Man", bombe au plutonium de 21 kt, dévaste la ville et fait plus de 70 000 morts.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item glass-panel">
+                    <div class="gallery-img">
+                        <img src="assets/10_oppenheimer.jpg" alt="J. Robert Oppenheimer — Directeur scientifique du Projet Manhattan" loading="lazy">
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>J. Robert Oppenheimer</h4>
+                        <p>Directeur scientifique du Projet Manhattan. « Je suis devenu la Mort, le destructeur des mondes. » — Citation de la Bhagavad-Gita après l'essai Trinity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== DATA VISUALISATION ======================== -->
+    <section id="data" class="section section-data">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">07 — DONNÉES</span>
+                <h2 class="section-title">Data visualisation</h2>
+                <p class="section-intro">Visualisations interactives des données historiques, géopolitiques et quantitatives du nucléaire militaire.</p>
+            </div>
+
+            <div class="charts-grid" data-animate>
+                <div class="chart-card glass-panel">
+                    <h3>Essais nucléaires par décennie</h3>
+                    <div class="chart-container">
+                        <canvas id="chartTests"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card glass-panel">
+                    <h3>Arsenaux nucléaires mondiaux (ogives)</h3>
+                    <div class="chart-container">
+                        <canvas id="chartArsenals"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card glass-panel">
+                    <h3>Évolution des arsenaux (1945-2024)</h3>
+                    <div class="chart-container chart-container-large">
+                        <canvas id="chartEvolution"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card glass-panel">
+                    <h3>Comparaison des puissances (échelle logarithmique)</h3>
+                    <div class="chart-container">
+                        <canvas id="chartPower"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== GLOSSAIRE / FAQ ======================== -->
+    <section id="glossaire" class="section section-glossaire">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">08 — RÉFÉRENCE</span>
+                <h2 class="section-title">Glossaire & FAQ</h2>
+                <p class="section-intro">Définitions scientifiques, notions stratégiques et questions fréquemment posées sur l'arme nucléaire.</p>
+            </div>
+
+            <!-- Glossaire -->
+            <div class="glossary-full" data-animate>
+                <h3 class="subsection-title">Glossaire</h3>
+                <div class="glossary-columns">
+                    <div class="glossary-entry glass-panel">
+                        <dt>Bombe A (fission)</dt>
+                        <dd>Arme nucléaire dont l'énergie provient de la fission de noyaux lourds (uranium-235 ou plutonium-239). Puissance typique : 1 à 500 kt.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>Bombe H (thermonucléaire)</dt>
+                        <dd>Arme utilisant la fusion de noyaux légers (deutérium, tritium), amorcée par une réaction de fission. Puissance typique : 100 kt à plusieurs Mt. Pas de limite théorique de puissance.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>ICBM</dt>
+                        <dd>Missile balistique intercontinental (Intercontinental Ballistic Missile). Portée > 5 500 km. Vecteur terrestre de la triade nucléaire.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>SLBM</dt>
+                        <dd>Missile balistique lancé depuis un sous-marin (Submarine-Launched Ballistic Missile). Composante la plus survivable de la dissuasion.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>MIRV</dt>
+                        <dd>Véhicule de rentrée à têtes multiples indépendamment guidées. Un seul missile peut frapper plusieurs cibles distinctes.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>Triade nucléaire</dt>
+                        <dd>Ensemble des trois composantes de forces nucléaires : missiles terrestres (ICBM), sous-marins (SLBM) et bombardiers stratégiques. La diversification garantit la capacité de seconde frappe.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>MAD</dt>
+                        <dd>Mutual Assured Destruction — Destruction mutuelle assurée. Doctrine selon laquelle la possession par deux adversaires d'arsenaux suffisants pour s'anéantir mutuellement empêche tout recours au nucléaire.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>Fallout (retombées)</dt>
+                        <dd>Matériaux radioactifs projetés dans l'atmosphère par une explosion nucléaire et retombant progressivement au sol. Les retombées locales concernent les premières 24h ; les retombées globales persistent des semaines à des mois.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>Kilotonnes / Mégatonnes</dt>
+                        <dd>Unités de mesure de la puissance explosive. 1 kt = énergie libérée par 1 000 tonnes de TNT. 1 Mt = 1 000 kt. Hiroshima ≈ 15 kt. Tsar Bomba ≈ 50 000 kt.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>EMP</dt>
+                        <dd>Electromagnetic Pulse — Impulsion électromagnétique. Onde de champ électrique et magnétique intense, capable de détruire les équipements électroniques non protégés sur de vastes zones.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>TNP</dt>
+                        <dd>Traité sur la Non-Prolifération des armes nucléaires (1968). Pilier du régime international de contrôle, distinguant États dotés (5) et non dotés.</dd>
+                    </div>
+                    <div class="glossary-entry glass-panel">
+                        <dt>Enrichissement</dt>
+                        <dd>Procédé visant à augmenter la proportion de l'isotope fissile (U-235) dans l'uranium naturel. L'uranium faiblement enrichi (< 20%) sert au nucléaire civil ; l'uranium hautement enrichi (> 90%) est de qualité militaire.</dd>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section" data-animate>
+                <h3 class="subsection-title">Questions fréquentes</h3>
+                <div class="faq-list">
+                    <div class="faq-item glass-panel">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Quelle est la différence entre bombe A et bombe H ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>La bombe A (atomique) utilise la <strong>fission</strong> de noyaux lourds. La bombe H (thermonucléaire ou à hydrogène) utilise la <strong>fusion</strong> de noyaux légers, amorcée par une étape de fission. La bombe H est théoriquement sans limite de puissance ; les bombes A sont limitées à quelques centaines de kilotonnes.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-panel">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Combien d'armes nucléaires existe-t-il dans le monde ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>En 2024, on estime le stock mondial à environ <strong>12 121 ogives nucléaires</strong>, dont ~9 585 sont dans les arsenaux militaires actifs. La Russie et les États-Unis détiennent à eux deux environ 90% du total mondial.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-panel">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Qu'est-ce que la masse critique ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>La masse critique est la quantité minimale de matière fissile nécessaire pour qu'une réaction en chaîne s'auto-entretienne. Elle dépend de la géométrie, de la densité et de la pureté isotopique du matériau. Pour de l'uranium-235 pur en sphère nue, elle est d'environ 52 kg ; pour le plutonium-239, environ 10 kg.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-panel">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Qu'est-ce que l'hiver nucléaire ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>L'hiver nucléaire est un scénario climatique dans lequel un conflit nucléaire majeur projetterait des millions de tonnes de suie et de fumée dans la stratosphère. Ce voile opaque bloquerait une part significative du rayonnement solaire, faisant chuter les températures mondiales de 5 à 15°C pendant plusieurs années, provoquant des famines généralisées.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-panel">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Pourquoi les bombes nucléaires ne sont-elles pas interdites ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Le Traité sur l'Interdiction des Armes Nucléaires (TIAN, 2017) les interdit juridiquement pour ses États parties. Cependant, aucun État doté de l'arme nucléaire ne l'a signé. Ces États estiment que la dissuasion nucléaire garantit leur sécurité et que le désarmement unilatéral serait dangereux. Le débat oppose impératif humanitaire et réalisme stratégique.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-panel">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Quelle est la portée d'un missile balistique intercontinental ?</span>
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Par définition, un ICBM a une portée supérieure à 5 500 km. Les modèles les plus performants (Minuteman III, RS-28 Sarmat, DF-41) ont des portées de 10 000 à 15 000 km, leur permettant d'atteindre n'importe quel point du globe. Le temps de vol typique est de 25 à 35 minutes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SECTION ÉTHIQUE ======================== -->
+    <section id="ethique" class="section section-ethique">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag">09 — RESPONSABILITÉ</span>
+                <h2 class="section-title">Avertissement éthique</h2>
+            </div>
+
+            <div class="ethique-content glass-panel" data-animate>
+                <div class="ethique-icon">⚠</div>
+                <h3>Mise en garde et responsabilité</h3>
+
+                <div class="ethique-text">
+                    <p>Les armes nucléaires représentent la menace existentielle la plus grave jamais créée par l'humanité. Leur utilisation à Hiroshima et Nagasaki a causé la mort de plus de 200 000 personnes, dans des souffrances indicibles, et laissé des séquelles durables sur les survivants (hibakusha), leur descendance et l'environnement.</p>
+
+                    <p>Ce site a une vocation <strong>strictement éducative, historique et scientifique</strong>. Son objectif est de contribuer à la compréhension d'un sujet complexe et grave, dans une perspective de connaissance, de mémoire et de réflexion critique.</p>
+
+                    <div class="ethique-points">
+                        <div class="ethique-point">
+                            <span class="point-icon">📚</span>
+                            <p><strong>Finalité pédagogique</strong> — Tout le contenu présenté ici vise à informer et éduquer. Aucune information n'est destinée à un usage opérationnel ou à la reproduction de technologies d'armement.</p>
+                        </div>
+                        <div class="ethique-point">
+                            <span class="point-icon">🕊</span>
+                            <p><strong>Devoir de mémoire</strong> — Comprendre l'histoire des armes nucléaires, c'est comprendre pourquoi l'humanité porte la responsabilité de ne jamais revivre les tragédies d'Hiroshima et Nagasaki.</p>
+                        </div>
+                        <div class="ethique-point">
+                            <span class="point-icon">🌍</span>
+                            <p><strong>Enjeu civilisationnel</strong> — Le désarmement nucléaire reste l'un des défis majeurs du XXIe siècle. La connaissance éclairée du sujet est un préalable nécessaire à l'engagement citoyen.</p>
+                        </div>
+                        <div class="ethique-point">
+                            <span class="point-icon">⚖</span>
+                            <p><strong>Responsabilité scientifique</strong> — Comme l'a dit Oppenheimer : la science n'est pas en soi bonne ou mauvaise. C'est l'usage qu'en font les sociétés qui détermine ses conséquences.</p>
+                        </div>
+                    </div>
+
+                    <blockquote class="ethique-quote">
+                        "L'humanité doit mettre fin à la guerre, ou la guerre mettra fin à l'humanité."
+                        <cite>— John F. Kennedy, discours aux Nations Unies, 1961</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-icon">☢</span>
+                    <span>ATOMIC BOMB by <strong>JLV</strong></span>
+                </div>
+                <p class="footer-text">Projet éducatif et scientifique. Tout le contenu est fourni à des fins pédagogiques et documentaires.</p>
+                <div class="footer-links">
+                    <a href="#hero">Accueil</a>
+                    <a href="#histoire">Histoire</a>
+                    <a href="#science">Science</a>
+                    <a href="#simulation">Simulation</a>
+                    <a href="#ethique">Éthique</a>
+                </div>
+                <p class="footer-copy">&copy; 2026 JLV — Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Lightbox modal pour la galerie -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
